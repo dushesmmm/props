@@ -1,0 +1,41 @@
+.wrapper {
+    width: calc(100vw - 100px);
+    height: 83px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: transparent;
+    position: fixed;
+    border-bottom: 1px solid #000000;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.wrapper a {
+    font-weight: 300;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-family: var(--font-inter);
+}
+
+.nav {
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrapper img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.wrapper img:last-child {
+    position: absolute;
+    right: 0px;
+    top: unset;
+    left: unset;
+    transform: unset;
+}

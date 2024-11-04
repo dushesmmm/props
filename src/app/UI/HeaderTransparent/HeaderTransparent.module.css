@@ -1,0 +1,43 @@
+.wrapper {
+    width: calc(100vw - 100px);
+    height: 83px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: transparent;
+    position: absolute;
+    border-bottom: 1px solid #F6F5EE;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.wrapper a {
+    font-weight: 300;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-family: var(--font-inter);
+}
+
+.nav {
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    filter: invert(1)
+}
+
+.wrapper img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Смещаем на центр */
+    cursor: pointer;
+    filter: invert(1);
+}
+
+.wrapper img:last-child {
+    position: absolute;
+    right: 0px;
+    top: unset;
+    left: unset;
+    transform: unset;
+}

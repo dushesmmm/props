@@ -1,0 +1,65 @@
+/* pages/admin/EditItem.module.css */
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input, .textarea, .select {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.textarea {
+  height: 100px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.saveButton, .deleteButton {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.saveButton {
+  background-color: #4caf50;
+  color: white;
+}
+
+.saveButton:hover {
+  background-color: #45a049;
+}
+
+.deleteButton {
+  background-color: #f44336;
+  color: white;
+}
+
+.deleteButton:hover {
+  background-color: #d32f2f;
+}
+
+.checkboxLabel {
+  width: 100%;
+  margin-bottom: 5px;
+  height: 30px;
+  cursor: pointer;
+}
+
+
+
