@@ -31,6 +31,11 @@
     transform: translate(-50%, -50%);
 }
 
+.button:hover {
+    transition: 1s all ease;
+    background-color: #0000004b;
+}
+
 .main {
     width: calc(100% - 100px);
     padding-left: 50px;
@@ -80,7 +85,6 @@
 
 .productsWrapper {
     width: 100%;
-    margin-bottom: 50px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -123,6 +127,7 @@
 .aboutUs {
     display: flex;
     margin-bottom: 70px;
+    padding-top: 40px;
 }
 
 .aboutUs_text {

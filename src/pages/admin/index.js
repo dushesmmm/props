@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import clientPromise from '../../app/lib/mongodb';
 import { useRouter } from 'next/router';
@@ -21,24 +21,9 @@ const AdminPanel = ({ items }) => {
     router.push('/login');
   };
 
-  const handleExport = async () => {
-    try {
-      const response = await fetch('/api/google', { method: 'GET' });
-      const data = await response.json();
-      if (data.success) {
-        alert('Данные успешно экспортированы!');
-      } else {
-        alert('Ошибка экспорта: ' + data.error);
-      }
-    } catch (error) {
-      alert('Ошибка при вызове API: ' + error.message);
-    }
-  };
-
   return (
     <div className={styles.container}>
       <h1>Админ панель</h1>
-      <button onClick={handleExport} className={styles.exportButton}>Экспортировать в Google Таблицу</button>
       <Link href="/admin/edit" className={styles.addButton}>Добавить новый продукт</Link>
       <ul className={styles.itemList}>
         {items.map((item) => (

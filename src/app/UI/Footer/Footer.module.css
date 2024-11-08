@@ -37,8 +37,25 @@
 
 .block a{
     border-bottom: 1px solid #F6F5EE;
-    padding-bottom: 5px;
+    margin-bottom: -1px;
     width: fit-content;
+}
+
+.block a:hover:after,
+.block a:focus:after {
+    width: 100%;
+}
+
+.block a:after {
+    background-color: #121212;
+    display: block;
+    content: "";
+    margin-bottom: -1px;
+    height: 2px;
+    width: 0%;
+    -webkit-transition: width .3s ease-in-out;
+    -moz--transition: width .3s ease-in-out;
+    transition: width .3s ease-in-out;
 }
 
 .title {
@@ -127,9 +144,27 @@
     font-weight: 300;
     font-size: 22px;
     border-bottom: 1px solid #F6F5EE;
-    padding-bottom: 5px;
+    /* padding-bottom: 5px; */
     position: absolute;
     right: 50px;
+    cursor: pointer;
+}
+
+.form button:hover:after,
+.form button:focus:after {
+    width: 100%;
+}
+
+.form button:after {
+    background-color: #121212;
+    display: block;
+    content: "";
+    margin-bottom: -1px;
+    height: 2px;
+    width: 0%;
+    -webkit-transition: width .3s ease-in-out;
+    -moz--transition: width .3s ease-in-out;
+    transition: width .3s ease-in-out;
 }
 
 .popup {

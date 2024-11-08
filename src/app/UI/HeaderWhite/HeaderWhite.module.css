@@ -4,8 +4,7 @@
     display: flex;
     align-items: center;
     position: relative;
-    background-color: transparent;
-    position: fixed;
+    background-color: #F6F5EE;
     border-bottom: 1px solid #000000;
     margin-left: 50px;
     margin-right: 50px;
@@ -28,7 +27,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); /* Смещаем на центр */
     cursor: pointer;
 }
 
@@ -38,4 +37,19 @@
     top: unset;
     left: unset;
     transform: unset;
+}
+.wrapper a:hover:after,
+.wrapper a:focus:after {
+    width: 100%;
+}
+
+.wrapper a:after {
+    background-color: #000000;
+    display: block;
+    content: "";
+    height: 1px;
+    width: 0%;
+    -webkit-transition: width .3s ease-in-out;
+    -moz--transition: width .3s ease-in-out;
+    transition: width .3s ease-in-out;
 }

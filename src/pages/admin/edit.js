@@ -4,14 +4,14 @@ import clientPromise from '../../app/lib/mongodb';
 import { ObjectId } from 'mongodb';
 import styles from './EditItem.module.css';
 
-const EditItem = ({ item, categories }) => {
+const EditItem = ({ item, categories, subcategory }) => {
   const [formData, setFormData] = useState(item || { 
     name: '', 
     description: '', 
     imageUrl: '', 
     category: '', 
     price: '', 
-    bestseller: false  // Добавляем поле для бестселлера
+    subcategory: ''
   });
   const router = useRouter();
   const { id } = router.query;
@@ -113,17 +113,13 @@ const EditItem = ({ item, categories }) => {
           className={styles.input}
         />
 
-        {/* Ползунок для параметра бестселлер */}
-        <label className={styles.checkboxLabel}>
-          <input
-            type="checkbox"
-            name="bestseller"
-            checked={formData.bestseller}
-            onChange={handleChange}
-            className={styles.checkbox}
-          />
-          Бестселлер
-        </label>
+        <select name="subcategory" value={formData.subcategory} onChange={handleChange} required className={styles.select}>
+          <option value="">Выберите подкатегорию</option>
+          {subcategory.map((cat) => (
+            <option key={cat} value={cat}>{cat}</option>
+          ))}
+        </select>
+        
 
         <div className={styles.buttons}>
           <button type="submit" className={styles.saveButton}>Сохранить</button>
@@ -159,13 +155,16 @@ export async function getServerSideProps(context) {
     const db = client.db('props');
     const collection = db.collection('products');
     item = await collection.findOne({ _id: new ObjectId(id) });
-  
+
+    // Преобразуем _id в строку
     if (item) {
       item._id = item._id.toString();
-      item.bestseller = !!item.bestseller; // Преобразуем значение бестселлера в булево
     }
   }
 
   const categories = ['Еда', 'Напитки', 'Десерты', 'Кофе', 'Чай'];
-  return { props: { item, categories } };
+  const subcategory = ['бестселлер', 'сезонное', 'классика'];
+  
+  return { props: { item, categories, subcategory } };
 }
+

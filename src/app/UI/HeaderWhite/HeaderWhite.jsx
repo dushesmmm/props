@@ -8,7 +8,7 @@ const HeaderWhite = () => {
   return (
     <div className={classes.wrapper}>
       <div className={classes.nav}>
-        <Link href=''>меню</Link>
+        <Link href='/menu'>меню</Link>
         <Link href=''>аксессуары</Link>
         <Link href=''>контакты</Link>
         <Link href=''>о нас</Link>

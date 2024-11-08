@@ -10,6 +10,10 @@ body {
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 input, select, textarea, button {
   font-family: inherit;
 }
