@@ -4,7 +4,7 @@ import { ObjectId } from 'mongodb';
 
 export default async (req, res) => {
   if (req.method === 'POST') {
-    const { _id, name, description, imageUrl, category, price, subcategory } = req.body;
+    const { _id, name, description, imageUrl, category, price, subcategory, type } = req.body;
 
     try {
       const client = await clientPromise;
@@ -14,10 +14,10 @@ export default async (req, res) => {
       if (_id) {
         await collection.updateOne(
           { _id: new ObjectId(_id) },
-          { $set: { name, description, imageUrl, category, price, subcategory } }
+          { $set: { name, description, imageUrl, category, price, subcategory, type } }
         );
       } else {
-        await collection.insertOne({ name, description, imageUrl, category, price, subcategory });
+        await collection.insertOne({ name, description, imageUrl, category, price, subcategory, type });
       }
 
       res.status(200).json({ message: 'Успешно сохранено' });

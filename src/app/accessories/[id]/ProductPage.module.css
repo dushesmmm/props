@@ -1,0 +1,124 @@
+.wrapper {
+  display: flex;
+  position: inherit;
+  margin-right: 50px;
+  margin-left: 50px;
+  width: calc(100vw - 100px);
+}
+
+.images {
+  position: relative;
+  width: calc(50% + 9px );
+  border-right: 1px solid black;
+}
+
+.image {
+  height: 700px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid black;
+}
+
+.mainImage {
+  width: 500px;
+  height: 500px;
+}
+
+.smallImages {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+}
+
+.twoImages {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  cursor: pointer;
+}
+
+.smallImage {
+  width: 200px;
+  height: 200px;
+}
+
+.productDetails {
+  margin-left: 25px;
+  width: 49%;
+}
+
+.productDetails h1 {
+  text-align: justify;
+  text-transform: uppercase;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 60px;
+}
+
+.productDetails p {
+  text-align: justify;
+  text-transform: uppercase;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 60px;
+}
+
+.names {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 40%;
+}
+
+.description {
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  color: #525252;
+}
+
+.quantityControl {
+  display: flex;
+  flex-direction: row;
+  width: 360px;
+  justify-content: space-between;
+  border: 1px solid black;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  height: 35px;
+  align-items: center;
+}
+
+.quantityControl span {
+  font-size: 20px;
+}
+.quantityControl div {
+  font-size: 30px;
+  font-weight: 200;
+  cursor: pointer;
+}
+
+.button {
+  width: 400px;
+  background-color: #121212;
+  color: #F6F5EE;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  text-align: center;
+  justify-content: center;
+  height: 35px;
+  cursor: pointer;
+}

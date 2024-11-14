@@ -1,0 +1,77 @@
+.wrapper {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+}
+
+.background {
+    width: calc(100vw - 100px);
+    height: calc(100vh - 50px);
+    margin-bottom: 50px;
+    background-size: cover;
+    background-image: url(https://s3-alpha-sig.figma.com/img/863a/3a37/0aa6dfc35edf0e4ba1b35fa8e1ce7677?Expires=1731888000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=DH12~Giz5Mcd8thAEamGvBhZom3jHXMSw0gF5lhmQSQ5mV7afWyo017kjuV2h4vQb0OTvRTRBJ6Az9ZK9zni7jmiPk9TIyRE9VIywEhZfmWKzI~khzhy~r6evvM449ux6b1dSbzhCWUXbfRs1wAySbPZogaCfn463LhLhrnblRhJyGLsUR-Cw6uQttLuRZGTtKmZzoGu-efbC-vZ7fq-OO9GKkBCDdE6gGKLauOxxfUk48kFnahrIC~v~6I-7EobOhx41HG1hbkImQvwRktdPVDWZL3yzFwCTVrs4YoPmH7I98accit0xwn9c8owRt0Uyl1-iLEtKvlXF1e1NgTbEw__);
+}
+
+.slogan {
+    width: 50%;
+    font-weight: 300;
+    font-size: 100px;
+    line-height: 95px;
+    color: #F6F5EE;
+    padding-top: 50px;
+    padding-left: 40px;
+}
+
+.slogan span {
+    font-style: italic;
+    font-family: var(--font-playfair);
+    font-weight: 700;
+}
+
+.slogan h4 {
+    color: #F6F5EE;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 22px;
+    margin-top: 30px;
+    width: 73%;
+}
+
+.coffee {
+    display: flex;
+    margin-bottom: 60px;
+}
+
+.coffee_text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    position: sticky;
+    width: 40%;
+    text-align: justify;
+    top: 0;
+    height: fit-content;
+}
+
+.coffee_text h3 {
+    margin-bottom: 30px;
+    font-size: 36px;
+    font-weight: 400;
+}
+
+.coffee_text p {
+    margin-bottom: 30px;
+    color: #525252;
+    font-weight: 300;
+    font-size: 22px;
+}
+
+.coffee img {
+    object-fit: cover;
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-between;
+}
+

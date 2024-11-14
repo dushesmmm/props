@@ -61,5 +61,24 @@
   cursor: pointer;
 }
 
+.menu {
+  width: 100%;
+  display: flex;
+}
+
+.menu input{
+  width: 100%;
+}
+
+.menu button {
+  margin-bottom: 15px;
+}
+
+.photos {
+  display: flex;
+  align-items: center;
+  width: auto;
+}
+
 
 

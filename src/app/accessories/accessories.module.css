@@ -1,0 +1,103 @@
+.wrapper {
+    margin-top: 80px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.categoryWrapper {
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.category {
+    display: flex;
+    flex-direction: row;
+    text-transform: uppercase;
+    font-style: italic;
+    font-size: 40px;
+    line-height: 95px;
+    font-family: var(--font-playfair);
+    cursor: pointer;
+}
+
+.category div:hover:after,
+.category div:focus:after {
+    width: 100%;
+}
+
+.category div:after {
+    background-color: #000000;
+    display: block;
+    content: "";
+    height: 1px;
+    width: 0%;
+    -webkit-transition: width .3s ease-in-out;
+    -moz--transition: width .3s ease-in-out;
+    transition: width .3s ease-in-out;
+}
+
+.category p {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.category .active:after {
+    width: 100%;
+    background-color: #000000;
+}
+
+.description {
+    margin-top: 15px;
+    margin-bottom: 40px;
+    font-weight: 300;
+    font-size: 22px;
+    color: #525252;
+    width: 400px;
+    text-align: center;
+}
+
+.accessoriesList {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.accessoryItem {
+    width: 580px;
+    margin-right: 20px;
+}
+
+.accessoryImage {
+    width: 580px;
+    height: 580px;
+}
+
+.accessoryDetails {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.accessoryDetails h3 {
+    font-size: 22px;
+    text-align: justify;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+  .accessoryDetails p {
+    font-size: 22px;
+    text-align: justify;
+    font-weight: 700;
+  }
+
+  .accessoryDescription {
+    margin-top: 15px;
+    margin-bottom: 40px;
+    font-weight: 300;
+    font-size: 22px;
+    color: #525252;
+    text-align: justify;
+  }

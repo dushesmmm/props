@@ -18,6 +18,7 @@
 .slogan span {
     font-style: italic;
     font-family: var(--font-playfair);
+    font-weight: 700;
 }
 
 .info {
@@ -92,7 +93,7 @@
 .bottomLinks {
     font-weight: 300;
     margin-top: 20px;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .subscription {

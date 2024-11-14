@@ -8,7 +8,7 @@ import Image from 'next/image';
 import al from '../../../../public/images/slider/arrow left.svg';
 import ar from '../../../../public/images/slider/arrow right.svg';
 
-export default function ProductSlider({ items }) {
+export default function ProductSlider({ items, type }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [sliderRef, instanceRef] = useKeenSlider({
@@ -26,16 +26,17 @@ export default function ProductSlider({ items }) {
   });
 
   useEffect(() => {
-    // Принудительно обновляем слайдер при изменении данных
     if (instanceRef.current) {
       instanceRef.current.update();
     }
-  }, [items]);
+  }, [items, type]);
+
+  const filteredItems = items.filter(item => item.type === type);
 
   return (
     <div className={styles.navigationWrapper}>
-      <div ref={sliderRef} className={`keen-slider ${styles.slider}`} key={items.length}>
-        {items.map((item) => (
+      <div ref={sliderRef} className={`keen-slider ${styles.slider}`} key={filteredItems.length}>
+        {filteredItems.map((item) => (
           <div key={item._id} className={`keen-slider__slide ${styles.slide}`}>
             <img src={item.imageUrl} alt={item.name} width={434} height={434} />
             <div className={styles.nameWrapper}>

@@ -1,5 +1,6 @@
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import { CartProvider } from "@/pages/api/CartContext";
 
 import Footer from "./UI/Footer/Footer";
 
@@ -16,9 +17,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ru">
       <body className={`${inter.variable} ${playfair.variable}`}>
-        {children}
-        <Footer />
+        <CartProvider>
+          {children}
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );
 }
+

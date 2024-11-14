@@ -1,0 +1,64 @@
+.categoryBlock {
+    border-bottom: 1px solid black;
+  }
+  .categoryTitle {
+    display: flex;
+    justify-content: space-between
+  }
+
+  .categoryTitle h2{
+    font-size: 40px;
+    line-height: 95px;
+    font-weight: 400;
+    text-transform: uppercase;
+    display: flex;
+  }
+
+  .categoryTitle p {
+    font-style: italic;
+    text-align: start;
+  }
+  
+  .productList {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .productCard {
+    margin-right: 31px;
+  }
+
+  .productCard:nth-child(3) {
+    margin-right: 0;
+  }
+
+  .productCard h3 {
+    font-size: 22px;
+    text-align: justify;
+    font-weight: 400;
+  }
+
+  .price p {
+    font-size: 22px;
+    text-align: justify;
+    font-weight: 700;
+  }
+
+  .price {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .productImage {
+    width: 580px;
+    height: 580px;
+  }
+
+  .description {
+    margin-top: 15px;
+    margin-bottom: 40px;
+    font-weight: 300;
+    font-size: 22px;
+    color: #525252;
+  }
+  

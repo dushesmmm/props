@@ -1,0 +1,169 @@
+.wrapper {
+    width: 25vw;
+    background: #F6F5EE;
+    height: 100vh;
+    border: 1px solid black;
+    border-top: unset;
+    position: absolute;
+    right: -33px;
+    top: 0px;
+    z-index: 999;
+    padding-right: 23px;
+    padding-left: 23px;
+}
+
+.close {
+    width: 100%;
+    height: 83px;
+}
+
+.close img {
+    position: absolute;
+    right: 23px;
+    top: 45px;
+    cursor: pointer;
+}
+
+.empty {
+    padding-top: 10px;
+    text-align: justify;
+    font-size: 16px;
+    font-weight: 300;
+    padding-bottom: 10px;
+    width: 100%;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+}
+
+.quantity {
+  position: absolute;
+  text-align: justify;
+  font-size: 16px;
+  font-weight: 300;
+  top: 50px;
+  left: 23px;
+}
+
+.price {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+
+.price p {
+    text-align: justify;
+    font-size: 22px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.cartItems {
+    display: flex;
+    flex-direction: column;
+}
+
+.cartItem {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 25px;
+    height: 170px;
+}
+
+.cartItemDetails {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 20px;
+    height: 170px !important;
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.main h2, .main p {
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.buttons {
+    width: 100%;
+    margin-top: auto;
+    display: flex;
+}
+
+.quantityControl {
+    display: flex;
+    flex-direction: row;
+    width: calc(80% - 40px);
+    justify-content: space-between;
+    border: 1px solid black;
+    padding-right: 20px;
+    padding-left: 20px;
+    height: 35px;
+    align-items: center;
+  }
+  
+  .quantityControl span {
+    font-size: 20px;
+  }
+  .quantityControl div {
+    font-size: 30px;
+    font-weight: 200;
+    cursor: pointer;
+  }
+  
+  .button {
+    width: 400px;
+    background-color: #121212;
+    color: #F6F5EE;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    text-align: center;
+    justify-content: center;
+    height: 35px;
+    cursor: pointer;
+  }
+
+  .delete {
+    width: 35px;
+    margin-left: 20px;
+    height: 35px;
+    border: 1px solid black;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .description {
+    font-weight: 300;
+    font-size: 15px;
+    color: #525252;
+    margin-top: 15px; 
+  }
+
+  .checkoutButton {
+    position: absolute;
+    bottom: 40px;
+    height: 50px;
+    background: #121212;
+    width: calc(100% - 40px);
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #F6F5EE;
+    font-size: 20px;
+    font-weight: 400;
+    cursor: pointer;
+  }
+

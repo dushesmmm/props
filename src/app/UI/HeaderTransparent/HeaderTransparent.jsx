@@ -9,12 +9,14 @@ const HeaderTransparent = () => {
     <div className={classes.wrapper}>
       <div className={classes.nav}>
         <Link href='/menu'>меню</Link>
-        <Link href=''>аксессуары</Link>
+        <Link href='/accessories'>аксессуары</Link>
         <Link href=''>контакты</Link>
-        <Link href=''>о нас</Link>
+        <Link href="/about-us">о нас</Link>
       </div>
-      <Image src={logo} alt='логотип'/>
-      <Image src={cart} alt='корзина'/>
+      <Link className={classes.logo} href='/'>
+        <Image src={logo} alt='логотип'/>
+      </Link>
+      <Image src={cart} alt='корзина' className={classes.cart}/>
     </div>
   )
 }

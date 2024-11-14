@@ -11,7 +11,8 @@ const EditItem = ({ item, categories, subcategory }) => {
     imageUrl: '', 
     category: '', 
     price: '', 
-    subcategory: ''
+    subcategory: '',
+    type : ''
   });
   const router = useRouter();
   const { id } = router.query;
@@ -120,6 +121,11 @@ const EditItem = ({ item, categories, subcategory }) => {
           ))}
         </select>
         
+        <select name="type" value={formData.type} onChange={handleChange} required className={styles.select}>
+          <option value="">Выберите тип</option>
+          <option value="напитки">Напитки</option>
+          <option value="выпечка">Выпечка</option>
+        </select>
 
         <div className={styles.buttons}>
           <button type="submit" className={styles.saveButton}>Сохранить</button>

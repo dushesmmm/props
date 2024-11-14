@@ -25,16 +25,18 @@
     filter: invert(1)
 }
 
-.wrapper img {
-    position: absolute;
+.logo {
+    position: absolute ;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Смещаем на центр */
+    transform: translate(-50%, -50%);
     cursor: pointer;
     filter: invert(1);
 }
 
-.wrapper img:last-child {
+.cart {
+    cursor: pointer;
+    filter: invert(1);
     position: absolute;
     right: 0px;
     top: unset;

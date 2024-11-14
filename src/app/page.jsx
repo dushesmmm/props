@@ -63,12 +63,12 @@ export default async function Home() {
           <div className={classes.aboutUs_text}>
             <h3>О НАС</h3>
             <p>Wake up to the perfect cup of coffee every morning and never run out of your favourite coffee blends again. Choose any standard flavour from our selection, the number of capsules, and the frequency, and we'll take care of the rest. Our sustainably sourced and perfectly roasted coffee beans are packaged in biodegradable capsules to deliver the freshest and richest taste with every brew. Additionally, our coffee is organic and climate compensated, so you can feel good about every cup you enjoy.</p>
-            <Link href="#more">УЗНАТЬ БОЛЬШЕ</Link>
+            <Link href="/about-us">УЗНАТЬ БОЛЬШЕ</Link>
           </div>
         </div>
         <div className={classes.category}>
           <p>аксессуары</p>
-          <Link href='/'>посмотреть все</Link>
+          <Link href='/accessories'>посмотреть все</Link>
         </div>
         <div className={classes.gallery}>
           <Image src={accessory} alt='аксессуары' width={885} height={885} />

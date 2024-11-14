@@ -1,14 +1,13 @@
 import clientPromise from '../../app/lib/mongodb';
 
 export default async (req, res) => {
-  const { subcategory } = req.query; // Получаем подкатегорию из параметров запроса
+  const { subcategory } = req.query;
 
   try {
     const client = await clientPromise;
     const db = client.db('props');
     const collection = db.collection('products');
 
-    // Фильтруем продукты по подкатегории
     const query = subcategory ? { subcategory: subcategory } : {};
     const data = await collection.find(query).toArray();
 

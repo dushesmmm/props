@@ -11,6 +11,7 @@
 }
 
 .wrapper a {
+    /* text-decoration: none; */
     font-weight: 300;
     font-size: 20px;
     text-transform: uppercase;
@@ -23,21 +24,23 @@
     justify-content: space-between;
 }
 
-.wrapper img {
-    position: absolute;
+.logo {
+    position: absolute ;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Смещаем на центр */
+    transform: translate(-50%, -50%);
     cursor: pointer;
 }
 
-.wrapper img:last-child {
+.cart {
+    cursor: pointer;
     position: absolute;
     right: 0px;
     top: unset;
     left: unset;
     transform: unset;
 }
+
 .wrapper a:hover:after,
 .wrapper a:focus:after {
     width: 100%;
