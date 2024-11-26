@@ -1,183 +1,354 @@
 .wrapper {
-    padding-top: 80px;
-    padding-left: 50px;
-    padding-right: 50px;
-    display: flex;
-    background-color: #121212;
-    color: #F6F5EE;
+  padding-top: 80px;
+  padding-left: 50px;
+  padding-right: 50px;
+  display: flex;
+  background-color: #121212;
+  color: #f6f5ee;
 }
 
 .slogan {
-    width: 50%;
-    font-weight: 300;
-    font-size: 100px;
-    line-height: 95px;
-    color: #F6F5EE;
+  width: 50%;
+  font-weight: 300;
+  font-size: 100px;
+  line-height: 95px;
+  color: #f6f5ee;
 }
 
 .slogan span {
-    font-style: italic;
-    font-family: var(--font-playfair);
-    font-weight: 700;
+  font-style: italic;
+  font-family: var(--font-playfair);
+  font-weight: 700;
 }
 
 .info {
-    width: 50%;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .block {
-    display: flex;
-    flex-direction: column;
-    width: fit-content;
-    margin-bottom: 30px;
-    flex-basis: 36%;
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  margin-bottom: 30px;
+  flex-basis: 36%;
 }
 
-.block a{
-    border-bottom: 1px solid #F6F5EE;
-    margin-bottom: -1px;
-    width: fit-content;
+.block a {
+  border-bottom: 1px solid #f6f5ee;
+  margin-bottom: -1px;
+  width: fit-content;
 }
 
 .block a:hover:after,
 .block a:focus:after {
-    width: 100%;
+  width: 100%;
 }
 
 .block a:after {
-    background-color: #121212;
-    display: block;
-    content: "";
-    margin-bottom: -1px;
-    height: 2px;
-    width: 0%;
-    -webkit-transition: width .3s ease-in-out;
-    -moz--transition: width .3s ease-in-out;
-    transition: width .3s ease-in-out;
+  background-color: #121212;
+  display: block;
+  content: "";
+  margin-bottom: -1px;
+  height: 2px;
+  width: 0%;
+  -webkit-transition: width 0.3s ease-in-out;
+  -moz--transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
 }
 
 .title {
-    font-size: 36px;
-    font-weight: 400;
-    text-transform: uppercase;
+  font-size: 36px;
+  font-weight: 400;
+  text-transform: uppercase;
 }
 
 .description {
-    font-weight: 300;
-    margin-top: 20px;
-    font-size: 24px;
+  font-weight: 300;
+  margin-top: 20px;
+  font-size: 24px;
 }
 
 .time {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 24px;
-    font-weight: 300;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 24px;
+  font-weight: 300;
 }
 
 .time span {
-    flex-shrink: 0;
+  flex-shrink: 0;
 }
 
 .separator {
-    flex-grow: 1;
-    height: 1px;
-    background-color: #F6F5EE;
-    margin: 0 10px;
+  flex-grow: 1;
+  height: 1px;
+  background-color: #f6f5ee;
+  margin: 0 10px;
 }
 
 .bottomLinks {
-    font-weight: 300;
-    margin-top: 20px;
-    font-size: 15px;
+  font-weight: 300;
+  margin-top: 20px;
+  font-size: 15px;
 }
 
 .subscription {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    padding-bottom: 200px;
-    margin-top: 100px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding-bottom: 200px;
+  margin-top: 100px;
 }
 
 .subscription p {
-    font-size: 32px;
-    font-weight: 400;
-    text-transform: uppercase;
+  font-size: 32px;
+  font-weight: 400;
+  text-transform: uppercase;
 }
 
 .input {
-    width: 100%;
-    height: 50px;
-    border: 1px solid #F6F5EE;
-    background-color: transparent;
-    margin-top: 20px;
-    font-size: 24px;
-    color: #F6F5EE;
-    font-weight: 300;
-    padding-left: 20px;
+  width: 100%;
+  height: 50px;
+  border: 1px solid #f6f5ee;
+  background-color: transparent;
+  margin-top: 20px;
+  font-size: 24px;
+  color: #f6f5ee;
+  font-weight: 300;
+  padding-left: 20px;
 }
 
 .input::placeholder {
-    font-size: 24px;
-    color: #F6F5EE;
-    font-weight: 300;
+  font-size: 24px;
+  color: #f6f5ee;
+  font-weight: 300;
 }
 
 .input:focus {
-    width: 100%;
-    height: 50px;
-    border: 1px solid #F6F5EE;
-    background-color: transparent !important;
-    margin-top: 20px;
-    outline: none;
+  width: 100%;
+  height: 50px;
+  border: 1px solid #f6f5ee;
+  background-color: transparent !important;
+  margin-top: 20px;
+  outline: none;
 }
 
 .form button {
-    margin-top: 20px;
-    background-color: transparent;
-    color: #F6F5EE;
-    border: unset;
-    font-weight: 300;
-    font-size: 22px;
-    border-bottom: 1px solid #F6F5EE;
-    /* padding-bottom: 5px; */
-    position: absolute;
-    right: 50px;
-    cursor: pointer;
+  margin-top: 20px;
+  background-color: transparent;
+  color: #f6f5ee;
+  border: unset;
+  font-weight: 300;
+  font-size: 22px;
+  border-bottom: 1px solid #f6f5ee;
+  position: absolute;
+  right: 50px;
+  cursor: pointer;
 }
 
 .form button:hover:after,
 .form button:focus:after {
-    width: 100%;
+  width: 100%;
 }
 
 .form button:after {
-    background-color: #121212;
-    display: block;
-    content: "";
-    margin-bottom: -1px;
-    height: 2px;
-    width: 0%;
-    -webkit-transition: width .3s ease-in-out;
-    -moz--transition: width .3s ease-in-out;
-    transition: width .3s ease-in-out;
+  background-color: #121212;
+  display: block;
+  content: "";
+  margin-bottom: -1px;
+  height: 2px;
+  width: 0%;
+  -webkit-transition: width 0.3s ease-in-out;
+  -moz--transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
 }
 
 .popup {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 15px 20px;
-    background-color: #333;
-    color: #f6f5ee;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  background-color: #333;
+  color: #f6f5ee;
+  font-size: 18px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  opacity: 0.9;
+}
+
+.cross {
+  display: none;
+}
+
+@media (max-width: 1650px) {
+  .title {
+    font-size: 28px;
+  }
+  .description {
+    font-size: 20px;
+  }
+  .slogan {
+    font-size: 95px;
+  }
+}
+@media (max-width: 1400px) {
+  .title {
+    font-size: 22px;
+  }
+  .description {
+    font-size: 17px;
+  }
+  .slogan {
+    font-size: 85px;
+  }
+}
+
+.collapsible .description {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.collapsible .description.show {
+  display: block;
+  opacity: 1;
+}
+
+@media (max-width: 1200px) {
+  .wrapper {
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  .block {
+    width: 100%;
+  }
+  .slogan {
+    font-weight: 300;
+    font-size: 50px;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+    line-height: 50px;
+    margin-bottom: 300px;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .block {
+    margin-bottom: 20px;
+    display: flex;
+    position: relative;
+  }
+  .title,
+  .bottomLinks {
+    font-size: 19px;
+    font-weight: 300;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding-top: 20px;
+    border-top: 1px solid #9b9a95;
+    width: 100% !important;
+    border-bottom: unset !important;
+    margin: 0;
+  }
+  .last {
+    padding-bottom: 20px;
+    margin: 0;
+    border-bottom: 1px solid #9b9a95;
+  }
+  .description {
     font-size: 18px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    opacity: 0.9;
+    height: 1px;
+    margin: 0;
+    opacity: 0;
+    transition: all 0.1s ease;
+  }
+  .description.show {
+    display: block;
+    margin-top: 20px;
+    height: auto;
+    opacity: 1;
+    transition: all 0.5s ease;
+  }
+  .cross {
+    display: flex;
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transition: transform 0.3s ease;
+  }
+  .rotated {
+    transform: rotate(45deg);
+  }
+  .subscription {
+    position: absolute;
+    top: 150px;
+    width: calc(100% - 60px);
+    padding-bottom: 0;
+  }
+  .subscription p {
+    font-size: 32px;
+  }
+  .input {
+    max-width: calc(100% - 20px);
+  }
+  .form button {
+    right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .block {
+    width: 100%;
+  }
+  .slogan {
+    font-weight: 300;
+    font-size: 50px;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+    line-height: 50px;
+    margin-bottom: 500px;
+  }
+  .block {
+    margin-bottom: 20px;
+    display: flex;
+    position: relative;
+  }
+  .subscription {
+    position: absolute;
+    top: 300px;
+    width: calc(100% - 60px);
+    padding-bottom: 0;
+  }
+  .subscription p {
+    font-size: 20px;
+  }
+  .input {
+    max-width: 100%;
+  }
+  .form button {
+    right: -20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .subscription p {
+    font-size: 14px;
+  }
 }

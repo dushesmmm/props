@@ -17,6 +17,7 @@
   .categoryTitle p {
     font-style: italic;
     text-align: start;
+    font-family: var(--font-playfair);
   }
   
   .productList {

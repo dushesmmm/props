@@ -12,7 +12,9 @@
   flex-direction: column;
 }
 
-.input, .textarea, .select {
+.input,
+.textarea,
+.select {
   margin-bottom: 15px;
   padding: 10px;
   border: 1px solid #ccc;
@@ -29,7 +31,8 @@
   justify-content: space-between;
 }
 
-.saveButton, .deleteButton {
+.saveButton,
+.deleteButton {
   padding: 10px 15px;
   border: none;
   border-radius: 5px;
@@ -66,7 +69,7 @@
   display: flex;
 }
 
-.menu input{
+.menu input {
   width: 100%;
 }
 
@@ -80,5 +83,63 @@
   width: auto;
 }
 
+.imageInput {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  height: 40px;
+}
 
+.imagesInput {
+  width: 70%;
+}
 
+.addImages {
+}
+
+.remove {
+  width: 20%;
+  background-color: #ff0000;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.remove:hover {
+  background-color: #d32f2f;
+}
+
+.addImages {
+  margin-top: 10px;
+  width: 100%;
+  background-color: blue;
+  border: none;
+  height: 40px;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.previewContainer {
+  max-width: 100%;
+}
+
+.previewContainer h2 {
+  width: 100%;
+}
+
+.previewContainer img {
+  width: 150px;
+  height: 150px;
+}
+
+.preview {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.imageInput input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}

@@ -1,58 +1,216 @@
 .wrapper {
-    width: calc(100vw - 100px);
-    height: 83px;
-    display: flex;
-    align-items: center;
-    position: relative;
-    background-color: #F6F5EE;
-    border-bottom: 1px solid #000000;
-    margin-left: 50px;
-    margin-right: 50px;
+  width: calc(100vw - 100px);
+  height: 83px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: #f6f5ee;
+  border-bottom: 1px solid #000000;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .wrapper a {
-    /* text-decoration: none; */
-    font-weight: 300;
-    font-size: 20px;
-    text-transform: uppercase;
-    font-family: var(--font-inter);
+  /* text-decoration: none; */
+  font-weight: 300;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-family: var(--font-inter);
 }
 
 .nav {
-    width: 500px;
-    display: flex;
-    justify-content: space-between;
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .logo {
-    position: absolute ;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 
 .cart {
-    cursor: pointer;
-    position: absolute;
-    right: 0px;
-    top: unset;
-    left: unset;
-    transform: unset;
+  cursor: pointer;
+  position: absolute;
+  right: 0px;
+  top: unset;
+  left: unset;
+  transform: unset;
 }
 
 .wrapper a:hover:after,
 .wrapper a:focus:after {
-    width: 100%;
+  width: 100%;
 }
 
 .wrapper a:after {
-    background-color: #000000;
+  background-color: #000000;
+  display: block;
+  content: "";
+  height: 1px;
+  width: 0%;
+  -webkit-transition: width 0.3s ease-in-out;
+  -moz--transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+}
+
+.cartCount {
+  height: 14px;
+  width: 14px;
+  border: 1px solid #000000;
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  right: -15px;
+  top: 10px;
+}
+
+.burger {
+  display: none;
+  width: 60px;
+  height: 20px;
+  transition-duration: 1s;
+  padding-top: 52px;
+  cursor: pointer;
+}
+.burger span {
+  height: 2px;
+  width: 47px;
+  background-color: #000000;
+  border-radius: 20px;
+  position: absolute;
+  transition-duration: 0.25s;
+  transition-delay: 0.25s;
+}
+.burger span:before {
+  left: 0;
+  position: absolute;
+  top: -12px;
+  height: 2px;
+  width: 47px;
+  background-color: #000000;
+  content: "";
+  border-radius: 20px;
+  transition-duration: 0.25s;
+  transition: transform 0.25s, top 0.25s 0.25s;
+}
+.burger span:after {
+  left: 0;
+  position: absolute;
+  top: 12px;
+  height: 2px;
+  width: 47px;
+  background-color: #000000;
+  content: "";
+  border-radius: 20px;
+  transition-duration: 0.25s;
+  transition: transform 0.25s, top 0.25s 0.25s;
+}
+.burger.open span {
+  transition-duration: 0.1s;
+  transition-delay: 0.25s;
+  background: transparent;
+  /* position: fixed; */
+  z-index: 999;
+}
+.burger.open span:before {
+  transition: top 0.25s, transform 0.25s 0.25s;
+  top: 0px;
+  transform: rotateZ(-45deg);
+  background-color: rgb(0, 0, 0);
+  z-index: 999;
+}
+.burger.open span:after {
+  transition: top 0.4s, transform 0.25s 0.25s;
+  top: 0px;
+  transform: rotateZ(45deg);
+  background-color: rgb(0, 0, 0);
+  z-index: 999;
+}
+
+@media (max-width: 1550px) {
+  .nav {
+    width: 400px;
+  }
+
+  .wrapper a {
+    font-size: 18px;
+  }
+}
+@media (max-width: 1200px) {
+  .nav {
+    display: flex;
+    align-items: start !important;
+    position: absolute;
+    top: 84px;
+    left: -100vw;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(7px);
+    background-color: #f6f5ee;
+    transition: all ease 1s;
+    width: 40vw;
+    height: calc(100vh - 70px);
+    justify-content: unset;
+    filter: invert(0);
+  }
+  .nav.active {
+    display: flex;
+    position: absolute;
+    top: 84px;
+    left: 0;
+    transition: all ease 1s;
+    height: calc(100vh - 84px);
+    overflow: hidden;
+    align-items: flex-start;
+    z-index: 9;
+  }
+  .active {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    transition: all ease 1s;
+  }
+  .nav a {
+    margin-top: 20px;
+    margin-bottom: 1px;
+    border-bottom: 1px solid black;
+    width: 100%;
+  }
+  .nav a:after {
+    background-color: #f6f5ee;
     display: block;
     content: "";
+    margin-bottom: -1px;
     height: 1px;
     width: 0%;
-    -webkit-transition: width .3s ease-in-out;
-    -moz--transition: width .3s ease-in-out;
-    transition: width .3s ease-in-out;
+    -webkit-transition: width 0.3s ease-in-out;
+    -moz--transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out;
+  }
+  .wrapper {
+    margin-left: 30px;
+    margin-right: 30px;
+    width: calc(100% - 60px);
+  }
+  .cart {
+    right: 15px;
+  }
+  .cartCount {
+    right: 1px;
+  }
+  .burger {
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: -10px;
+  }
 }
