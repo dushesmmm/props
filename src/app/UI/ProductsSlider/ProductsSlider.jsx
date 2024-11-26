@@ -17,6 +17,26 @@ export default function ProductSlider({ items, type }) {
       perView: 4,
       spacing: 15,
     },
+    breakpoints: {
+      '(max-width: 1200px)': {
+        slides: {
+          perView: 3,
+          spacing: 15,
+        },
+      },
+      '(max-width: 1000px)': {
+        slides: {
+          perView: 2,
+          spacing: 15,
+        },
+      },
+      '(max-width: 490px)': {
+        slides: {
+          perView: 1,
+          spacing: 0,
+        },
+      },
+    },
     slideChanged(slider) {
       setCurrentSlide(slider.track.details.rel);
     },
@@ -41,7 +61,7 @@ export default function ProductSlider({ items, type }) {
             <img src={item.imageUrl} alt={item.name} width={434} height={434} />
             <div className={styles.nameWrapper}>
               <h3>{item.name}</h3>
-              <p>{item.price} ₽</p>
+              {/* <p>{item.price} ₽</p> */}
             </div>
             <p className={styles.description}>{item.description}</p>
           </div>

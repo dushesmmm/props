@@ -120,6 +120,7 @@
   color: #f6f5ee;
   font-weight: 300;
   padding-left: 20px;
+  border-radius: 0 !important;
 }
 
 .input::placeholder {
@@ -186,7 +187,8 @@
 }
 
 @media (max-width: 1650px) {
-  .title {
+  .title,
+  .bottomLinks {
     font-size: 28px;
   }
   .description {
@@ -197,7 +199,8 @@
   }
 }
 @media (max-width: 1400px) {
-  .title {
+  .title,
+  .bottomLinks {
     font-size: 22px;
   }
   .description {
@@ -323,7 +326,7 @@
     width: 100%;
     text-align: center;
     line-height: 50px;
-    margin-bottom: 500px;
+    margin-bottom: 375px;
   }
   .block {
     margin-bottom: 20px;

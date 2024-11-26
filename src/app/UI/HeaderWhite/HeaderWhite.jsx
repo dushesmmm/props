@@ -25,7 +25,7 @@ const HeaderWhite = () => {
 
 
   return (
-    <div className={classes.wrapper} style={menuOpen ? {backgroundColor: '#F6F5EE', borderColor : 'black',} : undefined}>
+    <div className={`${classes.wrapper} ${menuOpen ? classes.wrapperOpen : undefined}`}>
       <div className={`${classes.burger} ${menuOpen ? classes.open : undefined}`} onClick={toggleMenu}><span></span></div>
       <div className={`${classes.nav} ${menuOpen ? classes.active : ""}`}>
         <Link href='/menu' onClick={toggleMenu}>

@@ -229,7 +229,11 @@
   .description,
   .aboutUs_text p,
   .aboutUs_text a {
-    font-size: 16px;
+    font-size: 22px;
+  }
+  .product {
+    width: 49%;
+    margin-bottom: 35px;
   }
 }
 
@@ -245,10 +249,6 @@
     padding-left: 30px;
     padding-right: 30px;
     width: calc(100% - 60px);
-  }
-  .product {
-    width: 49%;
-    margin-bottom: 35px;
   }
   .aboutUs {
     padding-top: 0;
