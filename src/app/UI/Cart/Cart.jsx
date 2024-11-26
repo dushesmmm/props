@@ -1,7 +1,7 @@
 "use client";
 
 import { useCart } from "@/pages/api/CartContext";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import classes from "./Cart.module.css";
 import close from "../../../../public/images/header/close.svg";
 import Image from "next/image";
@@ -18,9 +18,19 @@ const Cart = ({ onClose }) => {
     orderId,
   } = useCart();
 
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true); // Корзина становится видимой после монтирования компонента
+  }, []);
+
+  const handleClose = () => {
+    setIsVisible(false); // Убираем видимость корзины
+    setTimeout(onClose, 1000); // Ждём завершения анимации, затем вызываем onClose
+  };
+
   const handleCheckout = async () => {
     const formattedOrderId = `#${String(orderId).padStart(4, "0")}`;
-
     const orderDetails = cart
       .map((item) => `${item.name} x ${item.quantity}`)
       .join("\n");
@@ -40,7 +50,7 @@ const Cart = ({ onClose }) => {
       );
       incrementOrderId();
       clearCart();
-      onClose();
+      handleClose();
     } catch (error) {
       console.error("Ошибка отправки в Telegram:", error);
       alert("Не удалось отправить заказ.");
@@ -73,13 +83,13 @@ const Cart = ({ onClose }) => {
     .replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
   return (
-    <div className={classes.wrapper}>
+    <div className={`${classes.wrapper} ${isVisible ? classes.active : ""}`}>
       <div className={classes.close}>
         <Image
           src={close}
           width={22}
           height={22}
-          onClick={onClose}
+          onClick={handleClose}
           alt='закрыть'
         />
       </div>

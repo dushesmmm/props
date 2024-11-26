@@ -179,18 +179,19 @@
 @media (max-width: 600px) {
   .upperNav {
     display: flex;
-    overflow-x: auto; /* Добавляем горизонтальную прокрутку */
-    white-space: nowrap; /* Запрещаем перенос строк */
-    gap: 20px; /* Добавляем отступы между элементами */
-    font-size: 18px; /* Уменьшаем размер шрифта для компактности */
-    padding: 0 10px; /* Добавляем внутренние отступы */
+    overflow-x: auto; 
+    white-space: nowrap;
+    gap: 20px;
+    font-size: 24px;
+    padding: 0 10px; 
     margin-left: 0;
     margin-right: 0;
     height: 50px;
     scroll-behavior: smooth;
+    scrollbar-color: #f6f5ee #f6f5ee;
   }
   .upperNav p {
-    flex-shrink: 0; /* Предотвращаем сжатие элементов */
+    flex-shrink: 0;
   }
   .wrapper {
     margin-top: 50px;

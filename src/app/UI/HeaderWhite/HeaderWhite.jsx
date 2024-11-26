@@ -12,15 +12,21 @@ import { useCart } from "@/pages/api/CartContext";
 
 const HeaderWhite = () => {
   const [isCartVisible, setIsCartVisible] = useState(false);
-  const { cartQuantity } = useCart(); // Получаем количество товаров из контекста
+  const { cartQuantity } = useCart();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+    setMenuOpen((prev) => {
+      if (!prev && isCartVisible) setIsCartVisible(false);
+      return !prev;
+    });
   };
 
   const toggleCartVisibility = () => {
-    setIsCartVisible(!isCartVisible);
+    setIsCartVisible((prev) => {
+      if (!prev && menuOpen) setMenuOpen(false);
+      return !prev;
+    });
   };
 
 
@@ -28,16 +34,16 @@ const HeaderWhite = () => {
     <div className={`${classes.wrapper} ${menuOpen ? classes.wrapperOpen : undefined}`}>
       <div className={`${classes.burger} ${menuOpen ? classes.open : undefined}`} onClick={toggleMenu}><span></span></div>
       <div className={`${classes.nav} ${menuOpen ? classes.active : ""}`}>
-        <Link href='/menu' onClick={toggleMenu}>
+        <Link href='/menu'>
           меню
         </Link>
-        <Link href='/accessories' onClick={toggleMenu}>
+        <Link href='/accessories'>
           аксессуары
         </Link>
-        <Link href='#footer' onClick={toggleMenu}>
+        <Link href='#footer'>
           контакты
         </Link>
-        <Link href='/about-us' onClick={toggleMenu}>
+        <Link href='/about-us'>
           о нас
         </Link>
       </div>

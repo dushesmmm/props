@@ -15,11 +15,17 @@ const HeaderTransparent = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+    setMenuOpen((prev) => {
+      if (!prev && isCartVisible) setIsCartVisible(false); // Закрываем корзину, если открывается меню
+      return !prev;
+    });
   };
 
   const toggleCartVisibility = () => {
-    setIsCartVisible(!isCartVisible);
+    setIsCartVisible((prev) => {
+      if (!prev && menuOpen) setMenuOpen(false); // Закрываем меню, если открывается корзина
+      return !prev;
+    });
   };
 
 

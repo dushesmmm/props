@@ -4,9 +4,9 @@ import clientPromise from '../../app/lib/mongodb';
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const { name, description, price, images } = req.body;
+    const { name, description, extendedDescription, price, images } = req.body;
 
-    if (!name || !description || !price || !images) {
+    if (!name || !description || !extendedDescription || !price || !images) {
       return res.status(400).json({ error: 'Все поля обязательны для заполнения' });
     }
 
@@ -18,6 +18,7 @@ export default async function handler(req, res) {
       const newAccessory = {
         name,
         description,
+        extendedDescription,
         price,
         images,
       };

@@ -3,7 +3,7 @@ import { ObjectId } from 'mongodb';
 
 export default async (req, res) => {
   if (req.method === 'POST') {
-    const { _id, name, description, price, images } = req.body;
+    const { _id, name, description, extendedDescription, price, images } = req.body;
 
     try {
       const client = await clientPromise;
@@ -11,14 +11,12 @@ export default async (req, res) => {
       const collection = db.collection('accessories');
 
       if (_id) {
-        // Обновление аксессуара
         await collection.updateOne(
           { _id: new ObjectId(_id) },
-          { $set: { name, description, price, images } }
+          { $set: { name, description, extendedDescription, price, images } }
         );
       } else {
-        // Добавление нового аксессуара
-        await collection.insertOne({ name, description, price, images });
+        await collection.insertOne({ name, description, extendedDescription, price, images });
       }
 
       res.status(200).json({ message: 'Аксессуар успешно сохранен' });

@@ -9,6 +9,7 @@ const EditAccessory = ({ accessory }) => {
     accessory || {
       name: "",
       description: "",
+      extendedDescription: "", // Новое поле
       price: "",
       images: [],
     }
@@ -83,28 +84,35 @@ const EditAccessory = ({ accessory }) => {
       <h1>{id ? "Редактировать аксессуар" : "Добавить новый аксессуар"}</h1>
       <form onSubmit={handleSubmit} className={styles.form}>
         <input
-          type='text'
-          name='name'
+          type="text"
+          name="name"
           value={formData.name}
           onChange={handleChange}
-          placeholder='Название'
+          placeholder="Название"
           required
           className={styles.input}
         />
         <textarea
-          name='description'
+          name="description"
           value={formData.description}
           onChange={handleChange}
-          placeholder='Описание'
+          placeholder="Описание"
           required
           className={styles.textarea}
         ></textarea>
+        <textarea
+          name="extendedDescription"
+          value={formData.extendedDescription} // Поле для расширенного описания
+          onChange={handleChange}
+          placeholder="Расширенное описание"
+          className={styles.textarea}
+        ></textarea>
         <input
-          type='number'
-          name='price'
+          type="number"
+          name="price"
           value={formData.price}
           onChange={handleChange}
-          placeholder='Цена'
+          placeholder="Цена"
           required
           className={styles.input}
         />
@@ -113,15 +121,15 @@ const EditAccessory = ({ accessory }) => {
             <div key={index} className={styles.imageInput}>
               <p>{index + 1}</p>
               <input
-                type='url'
+                type="url"
                 value={image}
                 onChange={(e) => handleImageChange(index, e.target.value)}
-                placeholder='Ссылка на изображение'
+                placeholder="Ссылка на изображение"
                 required
                 className={styles.imagesInput}
               />
               <button
-                type='button'
+                type="button"
                 className={styles.remove}
                 onClick={() => handleRemoveImage(index)}
               >
@@ -130,7 +138,7 @@ const EditAccessory = ({ accessory }) => {
             </div>
           ))}
           <button
-            type='button'
+            type="button"
             className={styles.addImages}
             onClick={handleAddImage}
           >
@@ -155,12 +163,12 @@ const EditAccessory = ({ accessory }) => {
           </div>
         )}
         <div className={styles.buttons}>
-          <button type='submit' className={styles.saveButton}>
+          <button type="submit" className={styles.saveButton}>
             Сохранить
           </button>
           {id && (
             <button
-              type='button'
+              type="button"
               onClick={handleDelete}
               className={styles.deleteButton}
             >
