@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import classes from './menu.module.css';
 import ProductSlider from '../UI/ProductsSlider/ProductsSlider';
 import ProductCategoryBlock from '../UI/ProductCategoryBlock/ProductCategoryBlock';
@@ -10,6 +10,8 @@ export default function Menu() {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [currentSubcategory, setCurrentSubcategory] = useState('бестселлер');
   const [currentType, setCurrentType] = useState('напитки');
+  const upperNavRef = useRef(null); // Реф для навигационного контейнера
+
   const typeDescriptions = {
     напитки: 'Здесь вы найдете наши лучшие напитки, которые согреют и подарят удовольствие в любой сезон.',
     выпечка: 'Откройте для себя нашу выпечку: свежие и ароматные изделия, которые подойдут для любого случая.',
@@ -22,7 +24,11 @@ export default function Menu() {
     const sortedItems = items.sort((a, b) => (a._id < b._id ? 1 : -1));
 
     setAllProducts(sortedItems);
-    setFilteredProducts(sortedItems.filter(item => item.subcategory === currentSubcategory && item.type === currentType)); // Фильтруем по подкатегории и типу
+    setFilteredProducts(
+      sortedItems.filter(
+        (item) => item.subcategory === currentSubcategory && item.type === currentType
+      )
+    ); // Фильтруем по подкатегории и типу
   };
 
   useEffect(() => {
@@ -30,8 +36,21 @@ export default function Menu() {
   }, []);
 
   useEffect(() => {
-    setFilteredProducts(allProducts.filter(item => item.subcategory === currentSubcategory && item.type === currentType)); // Фильтруем продукты для слайдера
+    setFilteredProducts(
+      allProducts.filter(
+        (item) => item.subcategory === currentSubcategory && item.type === currentType
+      )
+    ); // Фильтруем продукты для слайдера
   }, [currentSubcategory, currentType, allProducts]);
+
+  // Скроллим к центру навигационного блока
+  useEffect(() => {
+    if (upperNavRef.current) {
+      const container = upperNavRef.current;
+      const scrollTo = (container.scrollWidth - container.clientWidth) / 2;
+      container.scrollLeft = scrollTo;
+    }
+  }, []);
 
   const handleSubcategoryChange = (subcategory) => {
     setCurrentSubcategory(subcategory);
@@ -50,7 +69,7 @@ export default function Menu() {
 
   return (
     <div className={classes.wrapper}>
-      <div className={classes.upperNav}>
+      <div className={classes.upperNav} ref={upperNavRef}>
         <p onClick={() => handleSubcategoryChange('бестселлер')}>бестселлеры</p>
         <p onClick={() => handleSubcategoryChange('сезонные новинки')}>сезонные новинки</p>
         <p onClick={() => handleSubcategoryChange('классика')}>классика</p>
@@ -58,30 +77,36 @@ export default function Menu() {
       <ProductSlider items={filteredProducts} type={currentType} />
       <div className={classes.categoryWrapper}>
         <div className={classes.category}>
-          <div onClick={() => handleTypeChange('напитки')} className={currentType === 'напитки' ? classes.active : ''}>
+          <div
+            onClick={() => handleTypeChange('напитки')}
+            className={currentType === 'напитки' ? classes.active : ''}
+          >
             НАПИТКИ
           </div>
           <p> / </p>
-          <div onClick={() => handleTypeChange('выпечка')} className={currentType === 'выпечка' ? classes.active : ''}>
+          <div
+            onClick={() => handleTypeChange('выпечка')}
+            className={currentType === 'выпечка' ? classes.active : ''}
+          >
             выпечка
           </div>
         </div>
-        <div className={classes.description}>
-          {typeDescriptions[currentType]}
-        </div>
+        <div className={classes.description}>{typeDescriptions[currentType]}</div>
       </div>
       <div>
         {Object.keys(groupedItems).map((category, index) => {
-          const filteredCategoryItems = groupedItems[category].filter(item => item.type === currentType);
+          const filteredCategoryItems = groupedItems[category].filter(
+            (item) => item.type === currentType
+          );
 
           if (filteredCategoryItems.length === 0) return null;
 
           return (
-            <ProductCategoryBlock 
-              key={category} 
-              title={category} 
-              items={filteredCategoryItems} 
-              type={currentType} 
+            <ProductCategoryBlock
+              key={category}
+              title={category}
+              items={filteredCategoryItems}
+              type={currentType}
               blockNumber={index + 1}
             />
           );

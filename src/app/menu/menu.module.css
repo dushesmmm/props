@@ -178,9 +178,19 @@
 
 @media (max-width: 600px) {
   .upperNav {
-    font-size: 15px;
+    display: flex;
+    overflow-x: auto; /* Добавляем горизонтальную прокрутку */
+    white-space: nowrap; /* Запрещаем перенос строк */
+    gap: 20px; /* Добавляем отступы между элементами */
+    font-size: 18px; /* Уменьшаем размер шрифта для компактности */
+    padding: 0 10px; /* Добавляем внутренние отступы */
     margin-left: 0;
     margin-right: 0;
+    height: 50px;
+    scroll-behavior: smooth;
+  }
+  .upperNav p {
+    flex-shrink: 0; /* Предотвращаем сжатие элементов */
   }
   .wrapper {
     margin-top: 50px;
