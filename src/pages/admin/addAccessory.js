@@ -1,26 +1,25 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { useRouter } from 'next/router';
-import styles from './EditItem.module.css';
+import { useState } from "react";
+import { useRouter } from "next/router";
+import styles from "./EditItem.module.css";
 
 const AddAccessory = () => {
   const router = useRouter();
-  const [name, setName] = useState('');
-  const [description, setDescription] = useState('');
-  const [extendedDescription, setExtendedDescription] = useState('');
-  const [price, setPrice] = useState('');
-  const [imageUrl, setImageUrl] = useState('');
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [extendedDescription, setExtendedDescription] = useState("");
+  const [price, setPrice] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
   const [imageUrls, setImageUrls] = useState([]);
 
   const handleAddImageUrl = () => {
     if (imageUrl && !imageUrls.includes(imageUrl)) {
       setImageUrls([...imageUrls, imageUrl]);
-      setImageUrl('');
+      setImageUrl("");
     }
   };
 
-  // Обработчик отправки формы
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -33,21 +32,21 @@ const AddAccessory = () => {
     };
 
     try {
-      const res = await fetch('/api/accessories', {
-        method: 'POST',
+      const res = await fetch("/api/accessories", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(newAccessory),
       });
 
       if (res.ok) {
-        router.push('/admin');
+        router.push("/admin");
       } else {
-        console.error('Ошибка при добавлении аксессуара');
+        console.error("Ошибка при добавлении аксессуара");
       }
     } catch (error) {
-      console.error('Ошибка при отправке данных:', error);
+      console.error("Ошибка при отправке данных:", error);
     }
   };
 
@@ -56,47 +55,47 @@ const AddAccessory = () => {
       <h1>Добавить аксессуар</h1>
       <form onSubmit={handleSubmit} className={styles.form}>
         <input
-          type="text"
+          type='text'
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
           className={styles.input}
-          placeholder="Название"
+          placeholder='Название'
         />
         <textarea
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           required
-          placeholder="Описание"
+          placeholder='Описание'
           className={styles.textarea}
         />
         <textarea
           value={extendedDescription}
           onChange={(e) => setExtendedDescription(e.target.value)}
-          placeholder="Расширенное описание"
+          placeholder='Расширенное описание'
           className={styles.textarea}
         />
         <input
-          type="number"
+          type='number'
           value={price}
           onChange={(e) => setPrice(e.target.value)}
           required
-          placeholder="Цена продукта"
+          placeholder='Цена продукта'
           className={styles.input}
         />
         <div className={styles.menu}>
           <input
-            type="text"
+            type='text'
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
-            placeholder="Ссылка на изображение"
+            placeholder='Ссылка на изображение'
             className={styles.input}
           />
           <button
-            type="button"
+            type='button'
             onClick={handleAddImageUrl}
             className={styles.saveButton}
-            style={{ background: 'blue' }}
+            style={{ background: "blue" }}
           >
             Добавить ссылку
           </button>
@@ -104,17 +103,22 @@ const AddAccessory = () => {
         {imageUrls.length > 0 && (
           <div>
             <h3>Добавленные изображения:</h3>
-            <ul style={{ display: 'flex' }}>
+            <ul style={{ display: "flex" }}>
               {imageUrls.map((url, index) => (
                 <div key={index} className={styles.photos}>
                   <p>{index + 1}.</p>
-                  <img src={url} alt={`Image ${index + 1}`} width={100} height={100} />
+                  <img
+                    src={url}
+                    alt={`Image ${index + 1}`}
+                    width={100}
+                    height={100}
+                  />
                 </div>
               ))}
             </ul>
           </div>
         )}
-        <button type="submit" className={styles.saveButton}>
+        <button type='submit' className={styles.saveButton}>
           Добавить аксессуар
         </button>
       </form>

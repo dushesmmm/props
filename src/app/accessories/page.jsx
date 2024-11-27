@@ -1,8 +1,8 @@
-'use client'
+"use client";
 
-import { useEffect, useState } from 'react';
-import classes from './accessories.module.css';
-import { useRouter } from 'next/router';
+import { useEffect, useState } from "react";
+import classes from "./accessories.module.css";
+import { useRouter } from "next/router";
 
 const Accessories = () => {
   const [accessories, setAccessories] = useState([]);
@@ -10,15 +10,15 @@ const Accessories = () => {
   useEffect(() => {
     const fetchAccessories = async () => {
       try {
-        const response = await fetch('/api/accessories');
+        const response = await fetch("/api/accessories");
         if (response.ok) {
           const data = await response.json();
           setAccessories(data);
         } else {
-          console.error('Ошибка при загрузке аксессуаров');
+          console.error("Ошибка при загрузке аксессуаров");
         }
       } catch (error) {
-        console.error('Ошибка при запросе:', error);
+        console.error("Ошибка при запросе:", error);
       }
     };
 
@@ -32,19 +32,30 @@ const Accessories = () => {
           <div>АКСЕССУАРЫ</div>
         </div>
         <div className={classes.description}>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, dicta beatae illo velit rem
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, dicta
+          beatae illo velit rem
         </div>
       </div>
 
       <div className={classes.accessoriesList}>
         {accessories.map((accessory) => (
-          <a href={`/accessories/${accessory._id}`} key={accessory._id} className={classes.accessoryItem} >
-            <img src={accessory.images[0]} alt={accessory.name} className={classes.accessoryImage}/>
+          <a
+            href={`/accessories/${accessory._id}`}
+            key={accessory._id}
+            className={classes.accessoryItem}
+          >
+            <img
+              src={accessory.images[0]}
+              alt={accessory.name}
+              className={classes.accessoryImage}
+            />
             <div className={classes.accessoryDetails}>
               <h3>{accessory.name}</h3>
               <p>{accessory.price} ₽</p>
             </div>
-            <p className={classes.accessoryDescription}>{accessory.description}</p>
+            <p className={classes.accessoryDescription}>
+              {accessory.description}
+            </p>
           </a>
         ))}
       </div>

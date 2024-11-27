@@ -1,24 +1,26 @@
-'use client';
+"use client";
 
-import { useEffect, useState, useRef } from 'react';
-import classes from './menu.module.css';
-import ProductSlider from '../UI/ProductsSlider/ProductsSlider';
-import ProductCategoryBlock from '../UI/ProductCategoryBlock/ProductCategoryBlock';
+import { useEffect, useState, useRef } from "react";
+import classes from "./menu.module.css";
+import ProductSlider from "../UI/ProductsSlider/ProductsSlider";
+import ProductCategoryBlock from "../UI/ProductCategoryBlock/ProductCategoryBlock";
 
 export default function Menu() {
   const [allProducts, setAllProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const [currentSubcategory, setCurrentSubcategory] = useState('бестселлер');
-  const [currentType, setCurrentType] = useState('напитки');
+  const [currentSubcategory, setCurrentSubcategory] = useState("бестселлер");
+  const [currentType, setCurrentType] = useState("напитки");
   const upperNavRef = useRef(null); // Реф для навигационного контейнера
 
   const typeDescriptions = {
-    напитки: 'Здесь вы найдете наши лучшие напитки, которые согреют и подарят удовольствие в любой сезон.',
-    выпечка: 'Откройте для себя нашу выпечку: свежие и ароматные изделия, которые подойдут для любого случая.',
+    напитки:
+      "Здесь вы найдете наши лучшие напитки, которые согреют и подарят удовольствие в любой сезон.",
+    выпечка:
+      "Откройте для себя нашу выпечку: свежие и ароматные изделия, которые подойдут для любого случая.",
   };
 
   const fetchProducts = async () => {
-    const response = await fetch('/api/products');
+    const response = await fetch("/api/products");
     const items = await response.json();
 
     const sortedItems = items.sort((a, b) => (a._id < b._id ? 1 : -1));
@@ -26,9 +28,10 @@ export default function Menu() {
     setAllProducts(sortedItems);
     setFilteredProducts(
       sortedItems.filter(
-        (item) => item.subcategory === currentSubcategory && item.type === currentType
+        (item) =>
+          item.subcategory === currentSubcategory && item.type === currentType
       )
-    ); // Фильтруем по подкатегории и типу
+    );
   };
 
   useEffect(() => {
@@ -38,12 +41,12 @@ export default function Menu() {
   useEffect(() => {
     setFilteredProducts(
       allProducts.filter(
-        (item) => item.subcategory === currentSubcategory && item.type === currentType
+        (item) =>
+          item.subcategory === currentSubcategory && item.type === currentType
       )
-    ); // Фильтруем продукты для слайдера
+    );
   }, [currentSubcategory, currentType, allProducts]);
 
-  // Скроллим к центру навигационного блока
   useEffect(() => {
     if (upperNavRef.current) {
       const container = upperNavRef.current;
@@ -61,7 +64,7 @@ export default function Menu() {
   };
 
   const groupedItems = allProducts.reduce((acc, item) => {
-    const category = item.category || 'Без категории';
+    const category = item.category || "Без категории";
     if (!acc[category]) acc[category] = [];
     acc[category].push(item);
     return acc;
@@ -70,28 +73,32 @@ export default function Menu() {
   return (
     <div className={classes.wrapper}>
       <div className={classes.upperNav} ref={upperNavRef}>
-        <p onClick={() => handleSubcategoryChange('бестселлер')}>бестселлеры</p>
-        <p onClick={() => handleSubcategoryChange('сезонные новинки')}>сезонные новинки</p>
-        <p onClick={() => handleSubcategoryChange('классика')}>классика</p>
+        <p onClick={() => handleSubcategoryChange("бестселлер")}>бестселлеры</p>
+        <p onClick={() => handleSubcategoryChange("сезонные новинки")}>
+          сезонные новинки
+        </p>
+        <p onClick={() => handleSubcategoryChange("классика")}>классика</p>
       </div>
       <ProductSlider items={filteredProducts} type={currentType} />
       <div className={classes.categoryWrapper}>
         <div className={classes.category}>
           <div
-            onClick={() => handleTypeChange('напитки')}
-            className={currentType === 'напитки' ? classes.active : ''}
+            onClick={() => handleTypeChange("напитки")}
+            className={currentType === "напитки" ? classes.active : ""}
           >
             НАПИТКИ
           </div>
           <p> / </p>
           <div
-            onClick={() => handleTypeChange('выпечка')}
-            className={currentType === 'выпечка' ? classes.active : ''}
+            onClick={() => handleTypeChange("выпечка")}
+            className={currentType === "выпечка" ? classes.active : ""}
           >
             выпечка
           </div>
         </div>
-        <div className={classes.description}>{typeDescriptions[currentType]}</div>
+        <div className={classes.description}>
+          {typeDescriptions[currentType]}
+        </div>
       </div>
       <div>
         {Object.keys(groupedItems).map((category, index) => {

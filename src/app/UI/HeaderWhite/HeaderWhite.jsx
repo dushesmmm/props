@@ -9,7 +9,6 @@ import { useState, useEffect } from "react";
 import Cart from "../Cart/Cart";
 import { useCart } from "@/pages/api/CartContext";
 
-
 const HeaderWhite = () => {
   const [isCartVisible, setIsCartVisible] = useState(false);
   const { cartQuantity } = useCart();
@@ -29,27 +28,31 @@ const HeaderWhite = () => {
     });
   };
 
-
   return (
-    <div className={`${classes.wrapper} ${menuOpen ? classes.wrapperOpen : undefined}`}>
-      <div className={`${classes.burger} ${menuOpen ? classes.open : undefined}`} onClick={toggleMenu}><span></span></div>
+    <div
+      className={`${classes.wrapper} ${
+        menuOpen ? classes.wrapperOpen : undefined
+      }`}
+    >
+      <div
+        className={`${classes.burger} ${menuOpen ? classes.open : undefined}`}
+        onClick={toggleMenu}
+      >
+        <span></span>
+      </div>
       <div className={`${classes.nav} ${menuOpen ? classes.active : ""}`}>
-        <Link href='/menu'>
-          меню
-        </Link>
-        <Link href='/accessories'>
-          аксессуары
-        </Link>
-        <Link href='#footer'>
-          контакты
-        </Link>
-        <Link href='/about-us'>
-          о нас
-        </Link>
+        <Link href='/menu'>меню</Link>
+        <Link href='/accessories'>аксессуары</Link>
+        <Link href='#footer'>контакты</Link>
+        <Link href='/about-us'>о нас</Link>
       </div>
 
-      <Link className={classes.logo} href='/' style={menuOpen ? {filter : 'invert(0)'} : undefined}>
-        <Image src={logo} alt='логотип'/>
+      <Link
+        className={classes.logo}
+        href='/'
+        style={menuOpen ? { filter: "invert(0)" } : undefined}
+      >
+        <Image src={logo} alt='логотип' width={135} height={50} />
       </Link>
 
       <Image
@@ -57,7 +60,7 @@ const HeaderWhite = () => {
         alt='корзина'
         className={classes.cart}
         onClick={toggleCartVisibility}
-        style={menuOpen ? {filter : 'invert(0)'} : undefined}
+        style={menuOpen ? { filter: "invert(0)" } : undefined}
       />
       {cartQuantity > 0 && (
         <div className={classes.cartCount}>{cartQuantity}</div>

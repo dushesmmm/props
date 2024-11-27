@@ -1,1 +1,11 @@
-<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" x="0px" y="0px" viewBox="0 0 100 125"><g transform="translate(0,-952.36218)"><path style="text-indent:0;text-transform:none;direction:ltr;block-progression:tb;baseline-shift:baseline;color:#000000;enable-background:accumulate;" d="m 50,978.36215 c -0.5523,0 -1,0.44772 -1,1 l 0,21.99995 -22,0 c -0.5523,0 -1,0.4477 -1,1 0,0.5523 0.4477,1 1,1 l 22,0 0,22 c 0,0.5523 0.4477,1.0001 1,1.0001 0.5523,0 1,-0.4478 1,-1.0001 l 0,-22 22,0 c 0.5523,0 1,-0.4477 1,-1 0,-0.5523 -0.4477,-1 -1,-1 l -22,0 0,-21.99995 c 0,-0.55228 -0.4477,-1 -1,-1 z" fill="#000000" fill-opacity="1" stroke="none" marker="none" visibility="visible" display="inline" overflow="visible"/></g><text x="0" y="115" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">Created by Three Six Five</text><text x="0" y="120" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">from the Noun Project</text></svg>
+<svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_338_219)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.28578 7.58329H13.7144C14.0298 7.58329 14.2858 7.32196 14.2858 6.99996C14.2858 6.67796 14.0298 6.41663 13.7144 6.41663H2.28578C1.97036 6.41663 1.71436 6.67796 1.71436 6.99996C1.71436 7.32196 1.97036 7.58329 2.28578 7.58329Z" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M8.57157 12.8333V1.16665C8.57157 0.844646 8.31557 0.583313 8.00014 0.583313C7.68471 0.583313 7.42871 0.844646 7.42871 1.16665V12.8333C7.42871 13.1553 7.68471 13.4166 8.00014 13.4166C8.31557 13.4166 8.57157 13.1553 8.57157 12.8333Z" fill="black"/>
+</g>
+<defs>
+<clipPath id="clip0_338_219">
+<rect width="16" height="14" fill="white"/>
+</clipPath>
+</defs>
+</svg>

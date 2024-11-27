@@ -1,6 +1,6 @@
 import classes from "./page.module.css";
 import Image from "next/image";
-import logo from "../../public/images/main page/logo white.png";
+import logo from "../../public/images/main page/logo black.svg";
 import aboutUs from "../../public/images/main page/about us.png";
 import accessory from "../../public/images/main page/accessory.png";
 import accessory1 from "../../public/images/main page/accessory 1.png";

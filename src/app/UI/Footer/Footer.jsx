@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import cross from "../../../../public/images/footer/cross.svg";
 import Image from "next/image";
+import logo from "../../../../public/images/header/logo.svg";
 
 const Footer = () => {
   const [expandedSections, setExpandedSections] = useState({});
@@ -28,7 +29,7 @@ const Footer = () => {
         setStatus("Не удалось подписаться. Пожалуйста, попробуйте снова.");
       }
       setShowPopup(true);
-      setTimeout(() => setShowPopup(false), 3000); // Всплывающее окно исчезает через 3 секунды
+      setTimeout(() => setShowPopup(false), 3000);
     } catch (error) {
       setStatus("Произошла ошибка. Попробуйте позже.");
       setShowPopup(true);
@@ -47,7 +48,7 @@ const Footer = () => {
     <div className={classes.wrapper} id='footer'>
       {showPopup && (
         <div className={classes.popup}>
-          <p>{status}</p>
+          <p>Спасибо за подписку!</p>
         </div>
       )}
 
@@ -178,6 +179,10 @@ const Footer = () => {
             </button>
           </form>
         </div>
+      </div>
+      <div className={classes.rights}>
+        <Image width={135} height={50} src={logo} alt='логотип' />
+        <p>© 2024 Props Coffee All rights Reserved </p>
       </div>
     </div>
   );

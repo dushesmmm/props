@@ -28,10 +28,18 @@ const HeaderTransparent = () => {
     });
   };
 
-
   return (
-    <div className={`${classes.wrapper} ${menuOpen ? classes.wrapperOpen : undefined}`}>
-      <div className={`${classes.burger} ${menuOpen ? classes.open : undefined}`} onClick={toggleMenu}><span></span></div>
+    <div
+      className={`${classes.wrapper} ${
+        menuOpen ? classes.wrapperOpen : undefined
+      }`}
+    >
+      <div
+        className={`${classes.burger} ${menuOpen ? classes.open : undefined}`}
+        onClick={toggleMenu}
+      >
+        <span></span>
+      </div>
       <div className={`${classes.nav} ${menuOpen ? classes.active : ""}`}>
         <Link href='/menu' onClick={toggleMenu}>
           меню
@@ -47,8 +55,12 @@ const HeaderTransparent = () => {
         </Link>
       </div>
 
-      <Link className={classes.logo} href='/' style={menuOpen ? {filter : 'invert(0)'} : undefined}>
-        <Image src={logo} alt='логотип'/>
+      <Link
+        className={classes.logo}
+        href='/'
+        style={menuOpen ? { filter: "invert(0)" } : undefined}
+      >
+        <Image src={logo} alt='логотип' width={135} height={50} />
       </Link>
 
       <Image
@@ -56,10 +68,15 @@ const HeaderTransparent = () => {
         alt='корзина'
         className={classes.cart}
         onClick={toggleCartVisibility}
-        style={menuOpen ? {filter : 'invert(0)'} : undefined}
+        style={menuOpen ? { filter: "invert(0)" } : undefined}
       />
       {cartQuantity > 0 && (
-        <div className={classes.cartCount} style={menuOpen ? {filter : 'invert(1)'} : undefined}>{cartQuantity}</div>
+        <div
+          className={classes.cartCount}
+          style={menuOpen ? { filter: "invert(1)" } : undefined}
+        >
+          {cartQuantity}
+        </div>
       )}
       {isCartVisible && (
         <div className={classes.cartContainer}>

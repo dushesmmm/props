@@ -111,6 +111,8 @@
   font-size: 30px;
   font-weight: 200;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .button {
@@ -125,6 +127,7 @@
   justify-content: center;
   height: 35px;
   cursor: pointer;
+  transition: color 1s ease;
 }
 
 .arrow {
@@ -150,6 +153,15 @@
 
 .arrow.right {
   right: -10px;
+}
+
+.addedToCart {
+  background-color: #4caf4f00;
+  color: #121212;
+  border: 1px solid #121212;
+  height: 33px;
+  width: calc(400px - 2px) !important;
+  transition: color 1s ease;
 }
 
 @media (max-width: 1200px) {
@@ -224,12 +236,15 @@
   .button {
     width: 100%;
   }
+  .addedToCart {
+    width: calc(100% - 2px) !important;
+  }
   .arrow {
     display: flex;
   }
   .description {
     padding-bottom: 20px;
-    border-bottom: 1px solid black
+    border-bottom: 1px solid black;
   }
 }
 

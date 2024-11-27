@@ -6,6 +6,7 @@ import classes from "./Cart.module.css";
 import close from "../../../../public/images/header/close.svg";
 import Image from "next/image";
 import plus from "../../../../public/images/products/plus.svg";
+import minus from "../../../../public/images/products/minus.svg";
 import cross from "../../../../public/images/header/delete.svg";
 
 const Cart = ({ onClose }) => {
@@ -21,12 +22,19 @@ const Cart = ({ onClose }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    setIsVisible(true); // Корзина становится видимой после монтирования компонента
+    setIsVisible(true);
+    // Отключение скролла
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      // Включение скролла после закрытия корзины
+      document.body.style.overflow = "";
+    };
   }, []);
 
   const handleClose = () => {
-    setIsVisible(false); // Убираем видимость корзины
-    setTimeout(onClose, 1000); // Ждём завершения анимации, затем вызываем onClose
+    setIsVisible(false);
+    setTimeout(onClose, 1000);
   };
 
   const handleCheckout = async () => {
@@ -128,18 +136,18 @@ const Cart = ({ onClose }) => {
                 <div className={classes.buttons}>
                   <div className={classes.quantityControl}>
                     <div onClick={() => updateQuantity(item._id, -1)}>
-                      <Image src={plus} alt='минус' width={34} height={34} />
+                      <Image src={minus} alt='минус' width={22} height={22} />
                     </div>
                     <span>{item.quantity}</span>
                     <div onClick={() => updateQuantity(item._id, 1)}>
-                      <Image src={plus} alt='плюс' width={34} height={34} />
+                      <Image src={plus} alt='плюс' width={22} height={22} />
                     </div>
                   </div>
                   <div
                     className={classes.delete}
                     onClick={() => removeFromCart(item._id)}
                   >
-                    <Image src={cross} alt='удалить' />
+                    <Image src={cross} alt='удалить' width={14} height={14} />
                   </div>
                 </div>
               </div>

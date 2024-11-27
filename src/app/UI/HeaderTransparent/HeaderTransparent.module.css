@@ -182,6 +182,7 @@
     height: calc(100vh - 70px);
     justify-content: unset;
     filter: invert(0);
+    border-right: 1px solid black;
   }
 
   .nav.active {

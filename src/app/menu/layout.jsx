@@ -1,10 +1,10 @@
-import HeaderWhite from "../UI/HeaderWhite/HeaderWhite"
+import HeaderWhite from "../UI/HeaderWhite/HeaderWhite";
 
-export default function menu ({children}) {
-    return (
-        <div>
-            <HeaderWhite />
-            {children}
-        </div>
-    )
+export default function menu({ children }) {
+  return (
+    <div>
+      <HeaderWhite />
+      {children}
+    </div>
+  );
 }

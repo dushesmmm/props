@@ -5,6 +5,8 @@
   display: flex;
   background-color: #121212;
   color: #f6f5ee;
+  position: relative;
+  flex-wrap: wrap;
 }
 
 .slogan {
@@ -110,6 +112,12 @@
   text-transform: uppercase;
 }
 
+.popup p {
+  font-size: 32px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
 .input {
   width: 100%;
   height: 50px;
@@ -169,17 +177,20 @@
 }
 
 .popup {
-  position: fixed;
-  bottom: 20px;
+  position: absolute;
+  bottom: 200px;
+  height: 250px;
   right: 20px;
+  width: 50%;
   padding: 15px 20px;
-  background-color: #333;
+  background-color: #121212;
   color: #f6f5ee;
-  font-size: 18px;
   border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  opacity: 0.9;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .cross {
@@ -222,6 +233,23 @@
   opacity: 1;
 }
 
+.rights {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+.rights img {
+  margin-bottom: 20px;
+  filter: invert(1);
+}
+.rights p {
+  margin-bottom: 40px;
+  font-size: 16px;
+  font-weight: 300;
+  color: #f6f5ee;
+}
+
 @media (max-width: 1200px) {
   .wrapper {
     padding-left: 30px;
@@ -231,8 +259,18 @@
     align-items: center;
     position: relative;
   }
+  .popup {
+    bottom: 700px;
+    height: 250px;
+    right: 0;
+    width: 100%;
+    padding: 0;
+  }
   .block {
     width: 100%;
+  }
+  .rights {
+    margin-top: 150px;
   }
   .slogan {
     font-weight: 300;

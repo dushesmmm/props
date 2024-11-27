@@ -1,72 +1,72 @@
 .nameWrapper {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .product {
-    width: 434px;
+  width: 434px;
 }
 
 .navigationWrapper {
-    position: relative;
+  position: relative;
 }
 
 .navigationWrapper img {
-    margin-bottom: 20px;
-    aspect-ratio: 1 / 1;
-    max-width: 100%;
-    height: auto;
+  margin-bottom: 20px;
+  aspect-ratio: 1 / 1;
+  max-width: 100%;
+  height: auto;
 }
 
-.nameWrapper h3{
-    margin-bottom: 10px;
-    color: '#000';
-    font-size: 22px;
-    font-weight: 400;
-    text-transform: uppercase;
+.nameWrapper h3 {
+  margin-bottom: 10px;
+  color: "#000";
+  font-size: 22px;
+  font-weight: 400;
+  text-transform: uppercase;
 }
 
 .nameWrapper p {
-    color: #000;
-    font-weight: 400;
-    font-size: 22px;
+  color: #000;
+  font-weight: 400;
+  font-size: 22px;
 }
 
 .description {
-    color: #525252;
-    font-weight: 300;
-    font-size: 22px;
+  color: #525252;
+  font-weight: 300;
+  font-size: 22px;
 }
 
 .left {
-    position: absolute;
-    top: 35%;
-    cursor: pointer;
+  position: absolute;
+  top: 35%;
+  cursor: pointer;
 }
 
 .right {
-    top: 35%;
-    position: absolute;
-    right: 0px;
-    cursor: pointer;
+  top: 35%;
+  position: absolute;
+  right: 0px;
+  cursor: pointer;
 }
 
 @media (max-width: 1500px) {
-    .nameWrapper h3,
-    .nameWrapper p,
-    .description {
-        font-size: 18px;
-    }
+  .nameWrapper h3,
+  .nameWrapper p,
+  .description {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 768px) {
-    .right {
-        top: 30%;
-    }
-    .left {
-        top: 30%;
-    }
+  .right {
+    top: 30%;
+  }
+  .left {
+    top: 30%;
+  }
 }

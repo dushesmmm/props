@@ -5,14 +5,20 @@ import classes from "./ProductPage.module.css";
 import { useParams } from "next/navigation";
 import Image from "next/image";
 import plus from "../../../../public/images/products/plus.svg";
+import minus from "../../../../public/images/products/minus.svg";
 import arrowLeft from "../../../../public/images/slider/arrow left.svg";
-import arrowRight from "../../../../public/images/slider/arrow right.svg"; 
+import arrowRight from "../../../../public/images/slider/arrow right.svg";
 import { useCart } from "@/pages/api/CartContext";
 
 const ProductPage = () => {
   const [product, setProduct] = useState(null);
   const [mainImage, setMainImage] = useState("");
   const [quantity, setQuantity] = useState(1);
+  const [buttonState, setButtonState] = useState({
+    text: "добавить в корзину",
+    colorClass: "",
+  });
+
   const params = useParams();
   const id = params.id;
   const { addToCart } = useCart();
@@ -55,6 +61,16 @@ const ProductPage = () => {
 
   const handleAddToCart = () => {
     addToCart(product, quantity);
+    setButtonState({
+      text: "товар добавлен в корзину",
+      colorClass: classes.addedToCart,
+    });
+    setTimeout(() => {
+      setButtonState({
+        text: "добавить в корзину",
+        colorClass: "",
+      });
+    }, 2000);
   };
 
   if (!product) return null;
@@ -63,13 +79,23 @@ const ProductPage = () => {
     <div className={classes.wrapper}>
       <div className={classes.images}>
         <div className={classes.image}>
-          <Image className={`${classes.arrow} ${classes.left}`} src={arrowLeft} alt='стрелочка' onClick={handlePrevImage} />
+          <Image
+            className={`${classes.arrow} ${classes.left}`}
+            src={arrowLeft}
+            alt='стрелочка'
+            onClick={handlePrevImage}
+          />
           <img
             src={mainImage}
             className={classes.mainImage}
             alt={product.name}
           />
-          <Image className={`${classes.arrow} ${classes.right}`} src={arrowRight} alt='стрелочка' onClick={handleNextImage} />
+          <Image
+            className={`${classes.arrow} ${classes.right}`}
+            src={arrowRight}
+            alt='стрелочка'
+            onClick={handleNextImage}
+          />
         </div>
         <div
           className={`${classes.smallImages} ${
@@ -95,15 +121,18 @@ const ProductPage = () => {
         <div className={classes.description}>{product.extendedDescription}</div>
         <div className={classes.quantityControl}>
           <div onClick={decreaseQuantity}>
-            <Image src={plus} alt="плюс" width={34} height={34} />
+            <Image src={minus} alt='минус' width={22} height={22} />
           </div>
           <span>{quantity}</span>
           <div onClick={increaseQuantity}>
-            <Image src={plus} alt="плюс" width={34} height={34} />
+            <Image src={plus} alt='плюс' width={22} height={22} />
           </div>
         </div>
-        <div className={classes.button} onClick={handleAddToCart}>
-          добавить в корзину
+        <div
+          className={`${classes.button} ${buttonState.colorClass}`}
+          onClick={handleAddToCart}
+        >
+          {buttonState.text}
         </div>
         <div className={classes.button}>доставка и оплата</div>
       </div>

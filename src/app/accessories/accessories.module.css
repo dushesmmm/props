@@ -105,61 +105,61 @@
 }
 
 @media (max-width: 1200px) {
-    .wrapper {
-        padding-left: 30px;
-        padding-right: 30px;
-        margin-top: 0;
-    }
-    .accessoryDescription {
-        font-size: 18px;
-    }
-    .accessoryDetails p,
-    .accessoryDetails h3 {
-        font-size: 20px;
-    }
+  .wrapper {
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 0;
+  }
+  .accessoryDescription {
+    font-size: 18px;
+  }
+  .accessoryDetails p,
+  .accessoryDetails h3 {
+    font-size: 20px;
+  }
 }
 @media (max-width: 1000px) {
-    .accessoryItem {
-        width: 49%;
-    }
-    .accessoryDetails p,
-    .accessoryDetails h3 {
-        font-size: 18px;
-    }
-    .accessoryDescription {
-        font-size: 15px;
-    }
+  .accessoryItem {
+    width: 49%;
+  }
+  .accessoryDetails p,
+  .accessoryDetails h3 {
+    font-size: 18px;
+  }
+  .accessoryDescription {
+    font-size: 15px;
+  }
 }
 @media (max-width: 768px) {
-    .wrapper {
-        padding-left: 20px;
-        padding-right: 20px;
-        margin-top: 0;
-    }
-    .accessoryDetails p,
-    .accessoryDetails h3 {
-        font-size: 15px;
-    }
-    .accessoryDescription {
-        font-size: 14px;
-    }
+  .wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 0;
+  }
+  .accessoryDetails p,
+  .accessoryDetails h3 {
+    font-size: 15px;
+  }
+  .accessoryDescription {
+    font-size: 14px;
+  }
 }
 @media (max-width: 500px) {
-    .accessoryItem {
-        width: 100%;
-    }
-    .categoryWrapper {
-        height: auto;
-        margin-top: 50px;
-        margin-bottom: 50px;
-    }
-    .category {
-        font-size: 24px;
-        height: fit-content;
-        line-height: normal;
-    }
-    .description {
-        font-size: 15px;
-        width: 300px;
-    }
+  .accessoryItem {
+    width: 100%;
+  }
+  .categoryWrapper {
+    height: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .category {
+    font-size: 24px;
+    height: fit-content;
+    line-height: normal;
+  }
+  .description {
+    font-size: 15px;
+    width: 300px;
+  }
 }

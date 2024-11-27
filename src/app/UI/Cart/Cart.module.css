@@ -5,7 +5,7 @@
   border: 1px solid black;
   border-top: unset;
   position: absolute;
-  right: 0;
+  right: -50px;
   top: 0;
   z-index: 999;
   padding-right: 23px;
@@ -124,6 +124,8 @@
   font-size: 30px;
   font-weight: 200;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .button {
@@ -183,6 +185,6 @@
 @media (max-width: 768px) {
   .wrapper {
     right: -20px;
-    width: 100%;
+    width: calc(100% - 8px);
   }
 }

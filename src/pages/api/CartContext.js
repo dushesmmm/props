@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from "react";
 
 const CartContext = createContext();
 
@@ -11,14 +11,14 @@ export const CartProvider = ({ children }) => {
   const [orderId, setOrderId] = useState(1); // Начальный идентификатор заказа
 
   useEffect(() => {
-    const storedCart = localStorage.getItem('cart');
+    const storedCart = localStorage.getItem("cart");
     if (storedCart) {
       setCart(JSON.parse(storedCart));
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cart));
+    localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
   const incrementOrderId = () => {
@@ -28,23 +28,26 @@ export const CartProvider = ({ children }) => {
   const addToCart = (product, quantity) => {
     setCart((prevCart) => {
       const updatedCart = (() => {
-        const existingProduct = prevCart.find((item) => item._id === product._id);
+        const existingProduct = prevCart.find(
+          (item) => item._id === product._id
+        );
         if (existingProduct) {
           return prevCart.map((item) =>
-            item._id === product._id ? { ...item, quantity: item.quantity + quantity } : item
+            item._id === product._id
+              ? { ...item, quantity: item.quantity + quantity }
+              : item
           );
         } else {
           return [...prevCart, { ...product, quantity }];
         }
       })();
-  
+
       // Сохранение обновленной корзины в localStorage
-      localStorage.setItem('cart', JSON.stringify(updatedCart));
-  
+      localStorage.setItem("cart", JSON.stringify(updatedCart));
+
       return updatedCart;
     });
   };
-  
 
   const removeFromCart = (id) => {
     setCart((prevCart) => prevCart.filter((item) => item._id !== id));
@@ -62,10 +65,22 @@ export const CartProvider = ({ children }) => {
 
   const clearCart = () => setCart([]);
 
-  const getCartQuantity = () => cart.reduce((total, item) => total + item.quantity, 0);
+  const getCartQuantity = () =>
+    cart.reduce((total, item) => total + item.quantity, 0);
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, updateQuantity, clearCart, orderId, incrementOrderId, cartQuantity: getCartQuantity()}}>
+    <CartContext.Provider
+      value={{
+        cart,
+        addToCart,
+        removeFromCart,
+        updateQuantity,
+        clearCart,
+        orderId,
+        incrementOrderId,
+        cartQuantity: getCartQuantity(),
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

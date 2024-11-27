@@ -9,7 +9,7 @@ const LoginPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const correctPassword = '52';
+    const correctPassword = '123';
 
     if (password === correctPassword) {
       document.cookie = `auth=${password}; path=/;`;
