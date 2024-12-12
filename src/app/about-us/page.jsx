@@ -17,7 +17,7 @@ const AboutUs = () => {
           </p>
           <h4>
             Wake up to the perfect cup of coffee every morning and never run out
-            of your favourite coffee blends again. Choose any standard flavour
+            of your favorite coffee blends again. Choose any standard flavour
             from our selection, the number of capsules, and the frequency, and
             we'll take care of the rest. Our sustainably sourced and perfectly
             roasted coffee beans are packaged in biodegradable capsules to
@@ -33,7 +33,7 @@ const AboutUs = () => {
           <h3>О НАС</h3>
           <p>
             Wake up to the perfect cup of coffee every morning and never run out
-            of your favourite coffee blends again. Choose any standard flavour
+            of your favorite coffee blends again. Choose any standard flavour
             from our selection, the number of capsules, and the frequency, and
             we'll take care of the rest. Our sustainably sourced and perfectly
             roasted coffee beans are packaged in biodegradable capsules to

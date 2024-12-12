@@ -9,7 +9,7 @@ const EditAccessory = ({ accessory }) => {
     accessory || {
       name: "",
       description: "",
-      extendedDescription: "", // Новое поле
+      extendedDescription: "",
       price: "",
       images: [],
     }
@@ -102,7 +102,7 @@ const EditAccessory = ({ accessory }) => {
         ></textarea>
         <textarea
           name='extendedDescription'
-          value={formData.extendedDescription} // Поле для расширенного описания
+          value={formData.extendedDescription}
           onChange={handleChange}
           placeholder='Расширенное описание'
           className={styles.textarea}

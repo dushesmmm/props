@@ -9,7 +9,7 @@
   height: calc(100vh - 50px);
   margin-bottom: 50px;
   background-size: cover;
-  background-image: url(https://s3-alpha-sig.figma.com/img/863a/3a37/0aa6dfc35edf0e4ba1b35fa8e1ce7677?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=TdQqGq4Zhc6RQK8ZG1-g2hAEp42u1NjHcWSHBuM61T0WJZYhLCfvVe-yjW7sRiOq9sANPuZqtqadwtAGG5u9Zd8J3Io0F3MGlSUq8j2Ft6~GN9VNdjsEgg24ewTef6LkVb0De3AKvqJdiW~Jf~5EzZMlVHD1Lb0bUIfR-4g5nHT~EDj4t1lNMGPYRaMTbDfJCE3Libyz6hGvXpY-8KQq1sMIrEpfOw5GM1W5tCWHZj3Umh5rLJSw5N8zHom7MuIpkRbDr6ksG1r9DebgWlsHDaNCABYXIaWJPWq-lUkDwxFJcG428HOdMSlnOtnBhfxLWhcnD~pXjzyN608JFXJokg__);
+  background-image: url(../../../public/images/about/bg.png);
 }
 
 .slogan {

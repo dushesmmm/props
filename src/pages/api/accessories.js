@@ -1,5 +1,3 @@
-// pages/api/accessories.js
-
 import clientPromise from "../../app/lib/mongodb";
 
 export default async function handler(req, res) {

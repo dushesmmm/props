@@ -1,7 +1,7 @@
 .wrapper {
   width: 100%;
   height: 100vh;
-  background-image: url(https://s3-alpha-sig.figma.com/img/a430/0082/69d9c36782f2bab7baf557b14bc5d093?Expires=1733097600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=hWS6YwZy0KUUJwZDYwFBBMyUTXT~u8ngM7b3b2aEbF3EC-Njq2VLkdr2QzGxNk3Nsiaf7qGcoRAvjWzBvi-zpBq~k830B5A6bzYoyxmJaE5InYqQNbrExgsZzLV0CX9Wb78Snlzjsk~v7RH9cu7ksi6~TkLHzVR0K2i7AiGazl3~raYXUKWhWmSsBGM86kGNMNhIFX87nxrHmaY10G9tT8vDmjz2MFbAppCmozgHtr8HNDqv7~Lib4yU5jc~yKW1HgvGOx6UhUPs4~qa8YSX1ppJ2ugCB9pymd4BUol-Q9RC1wWZqv5dhWqcvovw2cayZeKnx06YSwV4tJYCr78PBA__);
+  background-image: url(../../public/images/main\ page/bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }

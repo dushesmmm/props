@@ -8,7 +8,7 @@ export const useCart = () => useContext(CartContext);
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
-  const [orderId, setOrderId] = useState(1); // Начальный идентификатор заказа
+  const [orderId, setOrderId] = useState(1);
 
   useEffect(() => {
     const storedCart = localStorage.getItem("cart");
@@ -42,7 +42,6 @@ export const CartProvider = ({ children }) => {
         }
       })();
 
-      // Сохранение обновленной корзины в localStorage
       localStorage.setItem("cart", JSON.stringify(updatedCart));
 
       return updatedCart;

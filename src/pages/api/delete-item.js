@@ -1,4 +1,3 @@
-// pages/api/delete-item.js
 import clientPromise from "../../app/lib/mongodb";
 import { ObjectId } from "mongodb";
 
