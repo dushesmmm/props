@@ -15,8 +15,7 @@
 - Уведомления со всех форм в **Telegram**.
 - Административная панель с возможностью добавления, удаления и редактирования всех товаров и аксессуаров.
 
-<img src="https://github.com/user-attachments/assets/bf3db15a-27b4-4d69-b260-90734dda750a" height="150" alt="gif admin"  />
-![gif_admin](https://github.com/user-attachments/assets/bf3db15a-27b4-4d69-b260-90734dda750a)
+<img src="https://github.com/user-attachments/assets/bf3db15a-27b4-4d69-b260-90734dda750a" height="500" alt="gif admin"  />
 
 
 ## Стек технологий
