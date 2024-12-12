@@ -1,6 +1,6 @@
 # Проект Props
 
-**Ссылка на проект:** [props](https://props-sandy.vercel.app/)
+**Ссылка на проект:** [props.ru](https://props-sandy.vercel.app/)
 
 ## Команда разработки
 
@@ -22,3 +22,9 @@
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="30" alt="css3 logo"  />
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="30" alt="javascript logo"  />
 </div>
+
+## TODO
+
+- Добавить метатеги.
+- Дождаться фото и описания от заказчиков.
+- Пофиксить скорость загрузки страницы с меню.
