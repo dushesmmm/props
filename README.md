@@ -2,6 +2,8 @@
 
 **Ссылка на проект:** [props.ru](https://props-sandy.vercel.app/)
 
+<img src="https://github.com/user-attachments/assets/20745aeb-e929-4bba-a205-1651a54c5604" height="500" alt="gif site"  />
+
 ## Команда разработки
 
 - **Frontend Developer** (я)
